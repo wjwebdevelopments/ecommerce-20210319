@@ -22,12 +22,8 @@ module.exports = app => {
         app.use(errorhandler());
     }  
     
-    app.get(`${api}/products`, (req, res) => {
-        const product = {
-            id: 1,
-            name: 'televisor lcd 40\"',
-            image: 'some_image.png'
-        }
+    app.post(`${api}/products`, (req, res) => {
+        const product = req.body;
         res.send(product);
     });
 
