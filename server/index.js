@@ -10,8 +10,9 @@ const { api } = require('../keys');
 
 const productsRouter = require('../routes/products');
 const categoriesRouter = require('../routes/categories');
+const usersRouter = require('../routes/user');
 
-module.exports = app => {
+module.exports = (app) => {
 
     app.set('port', process.env.PORT);
     app.set('env', process.env.NODE_ENV);
@@ -31,6 +32,7 @@ module.exports = app => {
     // Routers
     app.use(`${api}/products`, productsRouter);
     app.use(`${api}/categories`, categoriesRouter);
+    app.use(`${api}/users`, usersRouter);
 
     return app;
 }
